@@ -5,6 +5,7 @@ class CurrencyCard extends StatelessWidget {
   final IconData icon;
   final bool isInverted;
   final _blackColor = const Color(0xff1f2123);
+  final int order;
   const CurrencyCard({
     super.key,
     required this.name,
@@ -12,11 +13,14 @@ class CurrencyCard extends StatelessWidget {
     required this.amount,
     required this.icon,
     required this.isInverted,
+    this.order = 0,
   });
 
   @override
   Widget build(BuildContext context) {
-    return (Container(
+    return Transform.translate(
+      offset: Offset(0, order * -20),
+      child: (Container(
         decoration: BoxDecoration(
           color: isInverted ? Colors.white : _blackColor,
           borderRadius: BorderRadius.circular(25),
@@ -79,6 +83,8 @@ class CurrencyCard extends StatelessWidget {
               ),
             ],
           ),
-        )));
+        ),
+      )),
+    );
   }
 }
