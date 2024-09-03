@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:nomad_toonfilx/widgets/button.dart';
 import 'package:nomad_toonfilx/widgets/currency_card.dart';
 
+import 'widgets/challenge/code_challenge_app.dart';
+
 class Player {
   String name;
   Player({required this.name});
 }
 
 void main() {
-  var nico = Player(name: "nico");
-  print(nico.name);
-  runApp(const MyApp());
+  runApp(const CodeChallengeApp());
 }
 
 class MyApp extends StatelessWidget {
