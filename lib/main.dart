@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nomad_toonfilx/widgets/button.dart';
 import 'package:nomad_toonfilx/widgets/currency_card.dart';
-
-import 'widgets/challenge/code_challenge_app.dart';
+import 'package:nomad_toonfilx/widgets/pomodoro/pomodoro_app.dart';
 
 class Player {
   String name;
@@ -10,7 +9,7 @@ class Player {
 }
 
 void main() {
-  runApp(const CodeChallengeApp());
+  runApp(const PomodoroApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -151,5 +150,53 @@ class MyApp extends StatelessWidget {
             )),
       ),
     ));
+  }
+}
+
+class App extends StatefulWidget {
+  const App({super.key});
+
+  @override
+  State createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  int counter = 0;
+
+  void onClicked() {
+    setState(() {
+      counter = counter + 1;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: const Color(0xFFF4EDDB),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Click Count',
+                style: TextStyle(fontSize: 30),
+              ),
+              Text(
+                '$counter',
+                style: const TextStyle(fontSize: 30),
+              ),
+              IconButton(
+                iconSize: 40,
+                onPressed: onClicked,
+                icon: const Icon(
+                  Icons.add_box_rounded,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
