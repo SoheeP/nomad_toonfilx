@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nomad_toonfilx/services/api_service.dart';
+import 'package:nomad_toonfilx/movie/screen/movie_home_screen.dart';
 import 'package:nomad_toonfilx/widgets/button.dart';
-import 'package:nomad_toonfilx/widgets/cartoon/cartoon_main.dart';
 import 'package:nomad_toonfilx/widgets/currency_card.dart';
-import 'package:nomad_toonfilx/widgets/pomodoro/pomodoro_app.dart';
 
 class Player {
   String name;
@@ -11,7 +9,7 @@ class Player {
 }
 
 void main() {
-  runApp(const CartoonMain());
+  runApp(MovieHomeScreen());
 }
 
 class MyApp extends StatelessWidget {
